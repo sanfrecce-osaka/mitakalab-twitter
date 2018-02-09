@@ -1,0 +1,32 @@
+ja:
+  helpers:
+    submit:
+      create: '登録する'
+      update: '更新する'
+
+    label:
+      user:
+        name: '名前'
+        username: 'ユーザー名'
+        location: '所在地'
+        about: '詳細'
+
+      tweet:
+        title: 'タイトル'
+        content: '内容'
+
+  active_record:
+    models:
+      user: 'ユーザー'
+      tweet: 'ツイート'
+
+    attributes:
+      user:
+        name: '名前'
+        username: 'ユーザー名'
+        location: '所在地'
+        about: '詳細'
+
+      tweet:
+        title: 'タイトル'
+        content: '内容'
