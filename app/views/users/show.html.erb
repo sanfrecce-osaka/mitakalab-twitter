@@ -1,6 +1,9 @@
-<h1><%= @user[:name] %></h1>
-<p><%= @user[:username] %></p>
+<h1><%= "#{t('active_record.models.user')}情報" %></h1>
+<h2><%= "#{t('active_record.attributes.user.name')}: #{@user.name}" %></h2>
+<p><%= "#{t('active_record.attributes.user.username')}: #{@user.username}" %></p>
 <ul>
-  <li>Location : <%= @user[:location] %></li>
-  <li>About : <%= @user[:about] %></li>
+  <li><%= "#{t('active_record.attributes.user.location')}: #{@user.location}" %></li>
+  <li><%= "#{t('active_record.attributes.user.about')}: #{@user.about}" %></li>
 </ul>
+
+<p><%= link_to '編集', [:edit, @user] %></p>
