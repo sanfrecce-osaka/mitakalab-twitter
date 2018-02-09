@@ -1,4 +1,7 @@
+<h1><%= "#{t('active_record.models.tweet')}一覧" %></h1>
+
 <% @tweets.each do |tweet| %>
-  <h1><%= tweet.title %></h1>
-  <p><%= tweet.content %></p>
+  <h2><%= "#{t('active_record.attributes.tweet.title')}: #{tweet.title}" %></h2>
+  <p><%= "#{t('active_record.attributes.tweet.content')}: #{tweet.content}" %></p>
+  <p><%= link_to '編集', [:edit, tweet] %></p>
 <% end %>
