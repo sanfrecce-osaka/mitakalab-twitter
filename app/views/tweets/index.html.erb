@@ -5,3 +5,6 @@
   <p><%= "#{t('active_record.attributes.tweet.content')}: #{tweet.content}" %></p>
   <p><%= link_to '編集', [:edit, tweet] %></p>
 <% end %>
+
+<p><%= @tweets.total_count %>件中<%= @tweets.offset_value + 1 %>〜<%= @tweets.offset_value + @tweets.length %>件を表示しています。</p>
+<%= paginate @tweets %>

@@ -30,3 +30,11 @@ ja:
       tweet:
         title: 'タイトル'
         content: '内容'
+
+  views:
+    pagination:
+      previous: '« 前ページ'
+      next: '次ページ »'
+      first: '最初のページ'
+      last: '最後のページ'
+      truncate: '...'
