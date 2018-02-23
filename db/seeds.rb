@@ -3,6 +3,8 @@
 @user.username = 'ryooopan'
 @user.location = 'Kanagawa, Japan'
 @user.about = 'Hello, I am Ryo. I am from database!'
+@user.email = 'suzuki@test.com'
+@user.password = 'testtest'
 @user.save
 
 @user = User.new
@@ -10,6 +12,8 @@
 @user.username = 'moyahima'
 @user.location = 'Tottori, Japan'
 @user.about = 'Nice to meet you. I am from database!'
+@user.email = 'aoki@test.com'
+@user.password = 'testtest'
 @user.save
 
 (1..100).map(&:to_s).each { |num| Tweet.create(title: "No.#{num}", content: "No.#{num} content") }
