@@ -46,10 +46,12 @@
     <%= f.password_field :password_confirmation, autocomplete: 'off' %>
   </div>
 
-  <div class="field">
-    <%= f.label :current_password %> <i>(プロフィールを変更する場合は入力してください)</i><br />
-    <%= f.password_field :current_password, autocomplete: 'off' %>
-  </div>
+  <% if f.object.encrypted_password.present? %>
+    <div class="field">
+      <%= f.label :current_password %> <i>(プロフィールを変更する場合は入力してください)</i><br />
+      <%= f.password_field :current_password, autocomplete: 'off' %>
+    </div>
+  <% end %>
 
   <div class="actions">
     <%= f.submit %>
