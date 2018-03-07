@@ -1,3 +1,4 @@
+<%= image_tag current_user.avatar.image.url(:thumb) %>
 <h1><%= "#{t('active_record.models.tweet')}一覧" %></h1>
 
 <% @tweets.each do |tweet| %>

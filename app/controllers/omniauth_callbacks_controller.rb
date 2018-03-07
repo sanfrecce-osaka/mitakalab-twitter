@@ -1,12 +1,13 @@
 class OmniauthCallbacksController < ApplicationController
   def twitter
-    user = User.from_omniauth(request.env['omniauth.auth'])
+    user, avatar = User.from_omniauth(request.env['omniauth.auth'])
 
     if user.persisted?
       flash.notice = 'ログインしました'
       sign_in_and_redirect user
     else
       session['devise.user_attributes'] = user.attributes
+      session['devise.avatar_id'] = avatar.id
       redirect_to new_user_registration_path
     end
   end

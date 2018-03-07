@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  has_one :avatar
+  accepts_nested_attributes_for :avatar
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -7,13 +10,15 @@ class User < ApplicationRecord
 
   class << self
     def from_omniauth(auth)
-      where(provider: auth[:provider], uid: auth[:uid]).first_or_create do |user|
+      returns = []
+      returns << where(provider: auth[:provider], uid: auth[:uid]).first_or_initialize do |user|
         user.name = auth.info.name
         user.username = auth.info.nickname
         user.email = auth.info.email
         user.location = auth.info.location
         user.about = auth.info.description
       end
+      returns << Avatar.create(image: URI.parse(auth.info.image))
     end
 
     def new_with_session(params, session)

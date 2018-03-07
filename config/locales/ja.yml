@@ -11,6 +11,9 @@ ja:
         location: '所在地'
         about: '詳細'
 
+      avatar:
+        image: '画像'
+
       tweet:
         title: 'タイトル'
         content: '内容'

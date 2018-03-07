@@ -5,6 +5,6 @@ class ApplicationController < ActionController::Base
   private
 
   def configure_permitted_parameters
-    %i(sign_up account_update).each { |action| devise_parameter_sanitizer.permit(action, keys: [:name, :username, :location, :about]) }
+    %i(sign_up account_update).each { |action| devise_parameter_sanitizer.permit(action, keys: [:name, :username, :location, :about, :avatar_id]) }
   end
 end

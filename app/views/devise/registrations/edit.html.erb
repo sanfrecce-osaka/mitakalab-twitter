@@ -3,6 +3,13 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
+  <%= f.fields_for :avatar do |avatar| %>
+      <div class="field">
+        <%= avatar.label :image %>
+        <%= avatar.file_field :image %>
+      </div>
+  <% end %>
+
   <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name, autofocus: true, autocomplete: 'name' %>
